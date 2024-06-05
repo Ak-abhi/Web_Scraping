@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="w-100 text-center">
+    <a class="navbar-brand">Scraping Result</a>
+  </div>
+</nav>
+<div class="container">
+<!--    Display the extracted title-->
+    <h2 style="margin-top: 15px;"><b>Title: {{ title }}</b></h2>
+    <h3>First 3 Paragraphs:</h3>
+    <ul>
+<!--     Display first 3 paragraphs of the page-->
+        {% for paragraph in paragraphs %}
+        <li>{{ paragraph }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div align="center">
+<!--    Link back to home page-->
+    <a href="/" class="btn btn-secondary">Home</a>
+</div>
+
+</body>
+</html>
